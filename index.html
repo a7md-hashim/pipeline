@@ -1,0 +1,187 @@
+<html lang="en">
+
+<head>
+  <title>Defect-overlay visualization</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <link rel="icon" type="image/x-icon" href="assets\favicon.ico" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  {{ resources }} {{ script }}
+
+  <style>
+    .embed-wrapper {
+      display: flex;
+    }
+  </style>
+</head>
+
+<!-- Navbar for xs screens only-->
+<div class="collapse visible-xs hidden-sm-up" id="navbarToggleExternalContent">
+  <div class="bg-light p-4">
+    <h5 class="text-Black h4">Filter data for the charts below</h5>
+    <span class="text-muted">To be used in mobile screen to give more space for the charts.</span>
+    <!-- Widget column for xs screens -->
+    <div class="embed-wrapper">{{ div["widgets"] }}</div>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark d-xs-flex d-sm-none">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<body>
+  <!-- Sidebar -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-light bg-dark d-sm-flex">
+        <br />
+      </nav>
+      <!-- Sidebar -->
+      <!-- Use d-none and d-sm-block classes to hide the sidebar on xs screens and show it on sm and up screens -->
+      <div class="col-sm-3 d-none d-sm-block bg-light sidebar">
+        <br />
+        <h4>Use widgets to filter data</h4>
+        <br />
+        <!-- Widget column for sm and up screens -->
+        <div class="embed-wrapper">{{ div["wc"] }}</div>
+      </div>
+
+      <!-- Main part -->
+      <div class="col-12 col-sm-9">
+        <div class="row">
+          <div class="col-12">
+            <br />
+            <h2>Defect-overlay visualization technique for oil pipelines</h2>
+            <div class="embed-wrapper">{{ div["pre"] }}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <div class="embed-wrapper">{{ div["clock"] }}</div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <!-- Stats infocards go here -->
+
+            <div class="row">
+              <div class="col-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                  <div class="card-header">
+                    <h5 class="card-title">No. of defects</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-inline-block">
+                      <div class="embed-wrapper">{{ div["d_wgt"]}}</div>
+                    </div>
+                    <div class="d-inline-block">
+                      <span class="text-muted"> from </span>
+                    </div>
+                    <div class="d-inline-block">
+                      <div class="embed-wrapper">{{ div["td_wgt"]}}</div>
+                    </div>
+                    <div class="embed-wrapper">{{ div["prct_wgt"]}}</div>
+                  </div>
+                  <div class="card-footer">
+                    <i class="bi bi-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0)"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                  <div class="card-header">
+                    <h5 class="card-title">Average depth</h5>
+                  </div>
+                  <div class="card-body">
+                    <br />
+                    <div class="embed-wrapper">{{ div["avg_wgt"]}}</div>
+
+                  </div>
+                  <div class="card-footer">
+                    <i class="bi bi-dash-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0)"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <div class="row">
+              <div class="col-6">
+                <div class="card light">
+                  <div class="card-header">
+                    <h5 class="card-title">Maximum depth</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="embed-wrapper">{{ div["max_wgt"]}}</div>
+                  </div>
+                  <div class="card-footer">
+                    <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0)"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card light">
+                  <div class="card-header">
+                    <h5 class="card-title">Minimum depth</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="embed-wrapper">{{ div["min_wgt"]}}</div>
+                  </div>
+                  <div class="card-footer">
+                    <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0)"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <br />
+              <div class="embed-wrapper">{{ div["tbl"] }}</div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <br />
+              <div class="embed-wrapper">{{ div["locations"] }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-light py-3">
+      <div class="container">
+        <div class="text-muted text-center">
+          Designed by Ahmed Hashim<br><br>
+          <a href="https://www.linkedin.com/in/a7mdhashim" target="_blank"
+            style="color: black; vertical-align: middle; margin-left: 5px; margin-right: 10px; font-size: 24px;">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/a7md-hashim" target="_blank"
+            style="color: black; vertical-align: middle; margin-left: 5px; margin-right: 10px; font-size: 24px;">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
