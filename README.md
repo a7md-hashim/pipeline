@@ -28,6 +28,8 @@ The app is a single self-contained HTML file called `bokeh_data_app.html`. To ru
 
 Filters can be adjusted using the sidebar widgets when on larger screens. On small screens like mobile, tap the menu button to access the filters.
 
+View the app [here](https://a7md-hashim.github.io/pipeline_app/)
+
 ## Customizing
 
 The main code for this project is main.py. Running it assembles the data, Bokeh models and HTML template into the final `bokeh_data_app.html` app.
