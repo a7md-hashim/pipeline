@@ -1,15 +1,15 @@
 # Bokeh Data Visualization App
 
-![Main plot](/assets/defect_plot.png)
+
 
 ## About
 
 This app visualizes ILI data of pipeline defects using the Python Bokeh library. It allows filtering and viewing the data in an interactive way.
-## Demo
 
 ![App Demo](/assets/app-demo.gif)
 
 ## Features
+<img src="/assets/defect_plot.png" width="300" style="float:right"> 
 
 - Interactive defect visualization technique that overlays transparent defect arcs
 - Map showing location of defects 
